@@ -245,8 +245,8 @@ Analysis reports are generated in JSON format with comprehensive details:
 ## Requirements
 
 - Python 3.10+
-- pandas >= 1.3
-- numpy >= 1.21
+- pandas >= 2.1.0
+- numpy >= 2.1.0
 
 ## Development
 
