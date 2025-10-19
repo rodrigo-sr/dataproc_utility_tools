@@ -6,6 +6,7 @@ CLI tool for validating CSV schemas using SchemaAnalyzer
 import argparse
 import os
 from pathlib import Path
+import sys
 
 from .schema_analyzer import SchemaAnalyzer
 

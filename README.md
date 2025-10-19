@@ -1,6 +1,8 @@
 # Dataproc Utility Tools
 
 [![PyPI version](https://badge.fury.io/py/dataproc-utility-tools.svg)](https://badge.fury.io/py/dataproc-utility-tools)
+[![Python Version](https://img.shields.io/pypi/pyversions/dataproc-utility-tools.svg)](https://pypi.org/project/dataproc-utility-tools/)
+[![License](https://img.shields.io/pypi/l/dataproc-utility-tools.svg)](https://github.com/rodrigo-sr/dataproc_utility_tools/blob/main/LICENSE)
 
 A comprehensive Python library for data quality analysis, schema validation, and dataset cleaning. Perfect for data engineers, analysts, and scientists who need to ensure data integrity in their pipelines.
 
@@ -12,6 +14,7 @@ A comprehensive Python library for data quality analysis, schema validation, and
 - **Report Generation**: Detailed JSON reports with samples and inconsistency analysis
 - **Large File Support**: Efficient chunked processing for big datasets
 - **CLI Interface**: Command-line tool for easy integration into data pipelines
+- **PySpark Integration**: Generate PySpark StructType schemas from analysis results
 
 ## Installation
 
@@ -84,6 +87,24 @@ import pandas as pd
 # Load inferred schema for consistent data types
 dtypes = schema_from_analysis_json('reports/schema_analysis.json')
 df = pd.read_csv('data/dataset.csv', dtype=dtypes)
+```
+
+### PySpark Schema Generation
+
+Generate PySpark StructType schemas from analysis results:
+
+```python
+from dataproc_utility_tools import schema_to_pyspark_struct
+from pyspark.sql.types import *
+
+# Generate PySpark schema string from analysis
+pyspark_schema_str = schema_to_pyspark_struct('reports/schema_analysis.json')
+
+# Create actual PySpark schema using eval()
+schema = eval(pyspark_schema_str)
+
+# Use with Spark DataFrame reading
+df = spark.read.csv('data/dataset.csv', header=True, schema=schema)
 ```
 
 ### Integration with Data Pipelines
@@ -167,6 +188,25 @@ consistent_path, inconsistent_path, n_consistent, n_inconsistent = processor.pro
 df_consistent, df_inconsistent = processor.process_dataframe(df, schema)
 ```
 
+### Utility Functions
+
+Additional utility functions for schema manipulation.
+
+```python
+from dataproc_utility_tools import (
+    schema_from_analysis_json, 
+    schema_to_pyspark_struct
+)
+
+# Load pandas-compatible schema
+dtypes = schema_from_analysis_json('reports/schema_analysis.json')
+df = pd.read_csv('data/dataset.csv', dtype=dtypes)
+
+# Generate PySpark schema string
+pyspark_schema_str = schema_to_pyspark_struct('reports/schema_analysis.json')
+# Use with: schema = eval(pyspark_schema_str)
+```
+
 ## Report Format
 
 Analysis reports are generated in JSON format with comprehensive details:
@@ -204,7 +244,7 @@ Analysis reports are generated in JSON format with comprehensive details:
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.10+
 - pandas >= 1.3
 - numpy >= 1.21
 

@@ -201,9 +201,9 @@ test_final/
 csv_data_generator.py
 
 # Original files that are now in src/ (to avoid duplication)
-clean_dataset.py
-schema_analyzer.py
-utils.py
+# clean_dataset.py
+# schema_analyzer.py
+# utils.py
 
 # Development cache directories
 .ruff_cache/
