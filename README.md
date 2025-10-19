@@ -1,8 +1,6 @@
 # Dataproc Utility Tools
 
 [![PyPI version](https://badge.fury.io/py/dataproc-utility-tools.svg)](https://badge.fury.io/py/dataproc-utility-tools)
-[![Python Version](https://img.shields.io/pypi/pyversions/dataproc-utility-tools.svg)](https://pypi.org/project/dataproc-utility-tools/)
-[![License](https://img.shields.io/pypi/l/dataproc-utility-tools.svg)](https://github.com/rodrigo-sr/dataproc_utility_tools/blob/main/LICENSE)
 
 A comprehensive Python library for data quality analysis, schema validation, and dataset cleaning. Perfect for data engineers, analysts, and scientists who need to ensure data integrity in their pipelines.
 
@@ -243,9 +241,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Rodrigo Serrano - [rodrigo-sr](https://github.com/rodrigo-sr)
-
-## Acknowledgments
-
-- Built with [pandas](https://pandas.pydata.org/) and [numpy](https://numpy.org/)
-- Inspired by data quality challenges in real-world data pipelines
+[rodrigo-sr](https://github.com/rodrigo-sr)
