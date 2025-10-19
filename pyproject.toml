@@ -3,17 +3,17 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dataproc_utility_tools"
+name = "dataproc-utility-tools"
 version = "0.1.0"
-description = "Data Quality Utility Tools - A comprehensive toolkit for data quality analysis, schema validation, and dataset cleaning"
+description = "Dataproc Utility Tools - A comprehensive toolkit for data quality analysis, schema validation, and dataset cleaning with PySpark integration"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  { name = "Your Name", email = "your.email@example.com" }
+  { name = "Rodrigo Ribeiro", email = "rodrigo.s.ribeiro98@gmail.com" }
 ]
 dependencies = [
-  "pandas>=1.3",
-  "numpy>=1.21",
+  "pandas>=2.1.0",
+  "numpy>=2.1.0",
 ]
 
 [project.optional-dependencies]
@@ -23,8 +23,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/dqu-tools"
-Repository = "https://github.com/yourusername/dqu-tools"
+Homepage = "https://github.com/rodrigo-sr/dataproc_utility_tools"
+Repository = "https://github.com/rodrigo-sr/dataproc_utility_tools"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -33,7 +33,7 @@ where = ["src"]
 "" = "src"
 
 [project.scripts]
-dqu-validate = "dqu_tools.cli:main"
+dqu-validate = "dataproc_utility_tools.cli:main"
 
 [tool.setuptools]
 py-modules = []
